@@ -1,38 +1,53 @@
-.App {
-  text-align: center;
+body {
+	background: #141414;
+	color: #ffffff;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.movie-app > .row {
+ overflow-x: auto;
+	flex-wrap: wrap;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.image-container {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  overflow-x: auto;
 }
 
-.App-link {
-  color: #61dafb;
+.image-item {
+  margin-right: 10px;
+  position: relative;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/* Optional: Adjust the width and height of the movie images */
+.image-item img {
+  width: 200px;
+  height: 300px;
+  border-radius: 10px;
+}
+.image-item:hover {
+	cursor: pointer;
+	transform: scale(1.1);
+	transition: 0.5s ease;
+}
+
+.overlay {
+  position: absolute;
+  background: rgba(0, 0, 0, 0.8);
+	width: 100%;
+	transition: 0.5s ease;
+	opacity: 0;
+	bottom: 10px;
+  font-size: 16px;
+	padding: 20px;
+	text-align: center;
+}
+.image-item:hover .overlay {
+  opacity: 1;
+}
+
+@media(max-width: 720px) {
+	.image-item img {
+		width: 150px;
+		height: 250px;
+		border-radius: 10px;
+	  }
 }
